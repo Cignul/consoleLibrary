@@ -9,6 +9,7 @@ namespace ConsoleLibrary.Models
     public string Name { get; private set; }
     //private by default if accessor not specified
     List<Book> Books = new List<Book>();
+    List<CD> Cds = new List<CD>();
 
     public void ViewBooks()
     {
@@ -19,10 +20,23 @@ namespace ConsoleLibrary.Models
         System.Console.WriteLine($"{i + 1} - {book.Title} {availableText}");
       }
     }
+    public void ViewCDs()
+    {
+      for (int i = 0; i < Cds.Count; i++)
+      {
+        CD cd = Cds[i];
+        string availableText = (cd.Available ? "Available" : "Not Available");
+        System.Console.WriteLine($"{i + 1} - {cd.Title} {availableText}");
+      }
+    }
 
     public void AddBook(Book book)
     {
       Books.Add(book);
+    }
+    public void AddCD(CD cd)
+    {
+      Cds.Add(cd);
     }
 
     public Library(string name)
@@ -52,7 +66,7 @@ namespace ConsoleLibrary.Models
       {
         Console.Clear();
         ViewBooks();
-        Console.WriteLine($"{Books.Count} - GO BACK");
+        Console.WriteLine($"{Books.Count + 1} - GO BACK");
         Book book = GetBookFromUserChoice();
 
         if (book == null)
