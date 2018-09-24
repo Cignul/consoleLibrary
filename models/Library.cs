@@ -67,6 +67,7 @@ namespace ConsoleLibrary.Models
       }
     }
 
+    //needs exception handling still, but toggles book back to available, mostly what I'm looking for
     internal void ReturnMenu()
     {
       Console.WriteLine("which book would you like to return?");
