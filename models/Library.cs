@@ -69,7 +69,12 @@ namespace ConsoleLibrary.Models
 
     internal void ReturnMenu()
     {
-      throw new NotImplementedException();
+      Console.WriteLine("which book would you like to return?");
+      Book book = GetBookFromUserChoice();
+      book.Available = true;
+      Console.WriteLine(book);
+
+
     }
   }
 }
