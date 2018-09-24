@@ -87,7 +87,7 @@ namespace ConsoleLibrary.Models
       Console.WriteLine("which book would you like to return?");
       Book book = GetBookFromUserChoice();
       book.Available = true;
-      Console.WriteLine(book);
+      Console.WriteLine($"{book}");
 
 
     }

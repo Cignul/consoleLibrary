@@ -1,7 +1,7 @@
 namespace ConsoleLibrary.Models
 {
   public class CD
-  //testing github repo
+  //testing github repo - worx
   {
     public string Title { get; private set; }
     public string Artist { get; private set; }
