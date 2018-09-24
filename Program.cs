@@ -26,7 +26,9 @@ namespace ConsoleLibrary
         Console.WriteLine("things you can do here");
         Console.WriteLine("1 - Checkout book");
         Console.WriteLine("2 - Return book");
-        Console.WriteLine("3 - Quit");
+        Console.WriteLine("3 - Checkout CD");
+        Console.WriteLine("4 - Return CD");
+        Console.WriteLine("5 - Quit");
         Console.WriteLine("What would you like to do?");
 
         var userInput = Console.ReadLine();
@@ -41,13 +43,19 @@ namespace ConsoleLibrary
               library.ReturnMenu();
               break;
             case 3:
+              library.CheckoutMenu();
+              break;
+            case 4:
+              library.ReturnMenu();
+              break;
+            case 5:
+            default:
+              System.Console.WriteLine("Invalid Choice Try again");
               inthelibrary = false;
               Console.Clear();
               Console.WriteLine("Bye Felicia");
               break;
-            default:
-              System.Console.WriteLine("Invalid Choice Try again");
-              break;
+
           }
 
         }

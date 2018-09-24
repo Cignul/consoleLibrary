@@ -57,11 +57,25 @@ namespace ConsoleLibrary.Models
       }
       return null;
     }
+    private CD GetCDFromUserChoice()
+    {
+      if (Int32.TryParse(Console.ReadLine(), out int n))
+      {
+        n = n - 1;
+        if (n < 0 || n >= Cds.Count)
+        {
+          return null;
+        }
+        return Cds[n];
+      }
+      return null;
+    }
 
 
     public void CheckoutMenu()
     {
       var checkingoutabook = true;
+      var checkingoutacd = true;
       while (checkingoutabook)
       {
         Console.Clear();
@@ -76,6 +90,23 @@ namespace ConsoleLibrary.Models
         else
         {
           book.Available = false;
+        }
+
+      }
+      while (checkingoutacd)
+      {
+        Console.Clear();
+        ViewCDs();
+        Console.WriteLine($"{Cds.Count + 1} - GO BACK");
+        CD cd = GetCDFromUserChoice();
+
+        if (cd == null)
+        {
+          checkingoutacd = false;
+        }
+        else
+        {
+          cd.Available = false;
         }
 
       }
